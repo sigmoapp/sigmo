@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">SigmoD</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hint_second">Neighbour Status</string>
+    <string name="hint_main">Network Status</string>
+    <string name="exitText">Exit</string>
+    <string name="performance">TTL Network Performance Team Initiative</string>
+
+</resources>
