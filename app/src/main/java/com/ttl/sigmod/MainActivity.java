@@ -153,6 +153,7 @@ public class MainActivity extends Activity {
         }
 
         aua = new AutoUpdateApk(getApplicationContext());
+        aua.setUpdateInterval(3600);
 
 
 
