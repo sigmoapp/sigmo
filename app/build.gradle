@@ -7,7 +7,7 @@ android {
         applicationId "com.ttl.sigmod"
         minSdkVersion 14
         targetSdkVersion 20
-        versionCode 7
+        versionCode 11
         versionName '4'
     }
     buildTypes {

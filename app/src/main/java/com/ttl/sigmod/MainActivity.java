@@ -154,7 +154,7 @@ public class MainActivity extends Activity {
 
         aua = new AutoUpdateApk(getApplicationContext());
         AutoUpdateApk.enableMobileUpdates();
-        aua.setUpdateInterval(3600);
+        aua.setUpdateInterval(43200000);
 
 
 

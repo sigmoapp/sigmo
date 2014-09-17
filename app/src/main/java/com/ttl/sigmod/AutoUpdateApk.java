@@ -33,6 +33,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.provider.Settings.Secure;
+import android.util.Log;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.ParseException;
@@ -109,6 +110,9 @@ public class AutoUpdateApk extends Observable {
 		} else {
 			Log_e(TAG, "update interval is too short (less than 1 hour)");
 		}
+        //UPDATE_INTERVAL=interval;
+       // Log.d("Auto", "inside setUpdateInterval");
+
 	}
 
 	// software updates will use WiFi/Ethernet only (default mode)
@@ -222,6 +226,7 @@ public class AutoUpdateApk extends Observable {
 	};
 
 	private void setupVariables(Context ctx) {
+        Log.d("Auto","Inside Set variables");
 		context = ctx;
 
 		packageName = context.getPackageName();
