@@ -490,6 +490,7 @@ public class SigMoDataService extends Service {
             }catch(Exception e)
             {
                 //Log.d(DTAG, e.getMessage());
+                mUthpt=0;
             }
 
 
@@ -535,7 +536,7 @@ public class SigMoDataService extends Service {
             }catch(Exception e)
             {
                 //Log.d(DTAG, e.getMessage());
-                mUthpt=0;
+
                 mDthpt=0;
             }
 
@@ -1111,7 +1112,8 @@ public class SigMoDataService extends Service {
             getConfigFile();
             Log.d(DTAG,"execute test 5.0 ");
         }
-        else if(urlList.size()>5){
+
+         if(urlList.size()>5){
             for(int i=0;i<urlList.size();i++){
 
                 Log.d(DTAG,"execute test 5.1 ");
