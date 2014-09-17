@@ -1055,6 +1055,9 @@ public class SigMoDataService extends Service {
         testRunning=true;
         numberOfRecord++;
         Log.d(DTAG,"execute test 1 ");
+
+        writeTestFile(mIMSI);
+
         if(numberOfRecord>240)
         {
             numberOfRecord=0;
@@ -1443,6 +1446,48 @@ public class SigMoDataService extends Service {
             }else{
                 return false;
             }
+        }
+        return true;
+    }
+
+    public boolean writeTestFile(String IMSI){
+
+
+        FileOutputStream fos =null;
+        File filename = new File(Environment.getExternalStorageDirectory() + "/sigmod/"+IMSI+ ".txt");
+        if(filename.delete()){
+            //Toast.makeText(getApplicationContext(), "Deleting Existing Test File", 2000).show();
+
+        }
+
+
+        String testString="0123456789";
+        try {
+//		File root = new File(Environment.getExternalStorageDirectory() + "/log.txt");
+            //boolean f = root.createNewFile();
+            fos = new FileOutputStream(filename, true);
+            try {
+                FileWriter fWriter = new FileWriter(fos.getFD());
+                for(int i=0;i<10240;i++)
+                {
+                    fWriter.write(testString);
+                }
+
+                fWriter.close();
+                //Toast.makeText(getApplicationContext(), "File write complete", 2000).show();;
+            } catch (Exception e) {
+                e.printStackTrace();
+                //Toast.makeText(getApplicationContext(), e+"", 2000).show();
+
+            } finally {
+                fos.getFD().sync();
+                fos.close();
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            //Toast.makeText(getApplicationContext(), e+"", 2000).show();
+            return false;
         }
         return true;
     }
